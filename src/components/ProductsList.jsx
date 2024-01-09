@@ -1,12 +1,10 @@
-import { useGetProductsQuery } from "../store/api";
+
 import { ProductCard } from "./ProductCard";
 
-export function ProductsList() {
-
-  const { data } = useGetProductsQuery();
+export function ProductsList(props) {
   return (
     <div className="products_list">
-      {data.map((product) => {
+      {props.content.map((product) => {
         return <ProductCard product={product}></ProductCard>;
       })}
     </div>
