@@ -9,36 +9,41 @@ import { NavigationComponent } from "./components/NavigationComponent";
 import { useGetCategoriesQuery, useGetProductsQuery } from "./store/api";
 
 function App() {
-  // const { data, isLoading, error } = useGetProductsQuery();
   const {
     data: categoriesdata,
     isLoading: categoriesisLoading,
     error: categorieserror,
   } = useGetCategoriesQuery();
+
   return (
     <div className="App">
       <NavigationComponent></NavigationComponent>
-      <Routes>
-        <Route path="/cart" element={<CartComponent></CartComponent>}></Route>
-        <Route
-          path="/fav"
-          element={<FavoriteComponent></FavoriteComponent>}
-        ></Route>
-        <Route path="/" element={<MainContent theme="/"></MainContent>}></Route>
+      {categoriesisLoading ? (
+        <LoadingComponent></LoadingComponent>
+      ) : categorieserror ? (
+        <ErrorComponent></ErrorComponent>
+      ) : (
+        <Routes>
+          <Route path="/cart" element={<CartComponent></CartComponent>}></Route>
+          <Route
+            path="/favorite"
+            element={<FavoriteComponent></FavoriteComponent>}
+          ></Route>
+          <Route
+            path="/"
+            element={<MainContent theme="popular"></MainContent>}
+          ></Route>
 
-        {categoriesisLoading ? (
-          <Route></Route>
-        ) : categorieserror ? (
-          <Route></Route>
-        ) : (
-          categoriesdata.map((category) => {
-            <Route
-              path={`/${category}`}
-              element={<MainContent theme={category}></MainContent>}
-            ></Route>;
-          })
-        )}
-      </Routes>
+          {categoriesdata.map((category) => {
+            return (
+              <Route
+                path={`/${category}`}
+                element={<MainContent theme={category}></MainContent>}
+              ></Route>
+            );
+          })}
+        </Routes>
+      )}
     </div>
   );
 }

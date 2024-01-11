@@ -184,3 +184,174 @@ nav {
 .sidebar ul li {
   margin-bottom: 10px;
 }
+
+/* FAVORITE COMPONENT */
+.favorite_component {
+  margin-left: 4em;
+  /* display: flex;
+  flex-direction: column;
+  row-gap: 3em; */
+}
+.favorite_list {
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4em;
+  width: 30%;
+}
+.favorite_card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 210px;
+}
+.fav_img {
+  width: 190px;
+  height: 210px;
+  border-radius: 50px;
+}
+.fav_card_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.fav_card_right h3 {
+  font-size: 2em;
+  font-weight: 200;
+}
+.fav_card_bot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fav_bot_icons {
+  display: flex;
+  column-gap: 10px;
+}
+.fav_bot_icons img {
+  width: 30px;
+  height: 30px;
+}
+
+/* CART COMPONENT */
+.cart_component {
+  margin-left: 4em;
+}
+.cart_content {
+  margin-top: 4em;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+.cart_info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+}
+.table_titles {
+  display: flex;
+}
+/* TODO: optimize */
+.title_by_name {
+  margin-right: 300px;
+}
+.title_by_quantity {
+  margin-right: 30px;
+}
+.title_by_price {
+  margin-right: 50px;
+}
+.cart_product_list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3em;
+}
+.cart_product_piece {
+  display: flex;
+  column-gap: 3em;
+  align-items: center;
+}
+.cart_product_img {
+  width: 120px;
+  height: 120px;
+}
+.clear_icon {
+  width: 30px;
+  height: 30px;
+}
+
+.cart_info_bot {
+  display: flex;
+  justify-content: space-between;
+}
+.cart_info_bot button {
+  padding: 1em 2em;
+  background: transparent;
+  border: 4px solid #999990;
+}
+.cart_priceInfo_bot {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+}
+
+.payment_cont {
+  background-color: #999990;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  /* align-items: center; */
+  justify-content: space-between;
+  border-radius: 50px;
+  padding: 2em 3em;
+}
+.payment_cont h2 {
+  color: #fefdf5;
+}
+.payment_cont label {
+  color: #fefdf5;
+}
+.payment_cont input {
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid #fefdf5;
+  padding: 1em 1em;
+  color: #fefdf5;
+}
+::placeholder {
+  color: #fefdf5;
+}
+.card_info_bot {
+  display: flex;
+  column-gap: 10px;
+}
+.card_inspire_info {
+  width: 50%;
+}
+.card_inspire_inputs {
+  display: flex;
+  column-gap: 10px;
+}
+.card_inspire_inputs input {
+  width: 3em;
+}
+.card_cvv_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+}
+.card_cvv_info input{
+  width: 3em;
+}
+.pay_btn{
+  padding: 1em 2em;
+  color: #999990;
+  background: #fefdf5;
+  border: none;
+  border-radius: 10px;
+}

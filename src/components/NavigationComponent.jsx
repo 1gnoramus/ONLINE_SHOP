@@ -5,9 +5,11 @@ import cart from "../assets/shopping_bag.png";
 import fav from "../assets/favorite_border.png";
 import { SideBar } from "./Sidebar";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export function NavigationComponent() {
+  const location = useLocation();
+  console.log(location);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function toggleMenu() {
@@ -24,7 +26,7 @@ export function NavigationComponent() {
             <input type="text" placeholder="Search" />
           </div>
           <div className="nav_logo_cont">
-            <Link to="/fav">
+            <Link to="/favorite">
               <img src={fav} alt="" />
             </Link>
             <img src={profile} alt="" />
@@ -36,10 +38,12 @@ export function NavigationComponent() {
       </div>
       <SideBar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}></SideBar>
       <div className="nav_bot">
-        <Link to='/'>
-          <span>Главная</span>
+        <Link to="/">
+          <span>HOME</span>
         </Link>
-        <span>/Мужская одежда</span>
+        <Link to={location.pathname}>
+          <span>{location.pathname.toUpperCase()}</span>
+        </Link>
       </div>
     </nav>
   );
