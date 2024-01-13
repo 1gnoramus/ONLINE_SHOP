@@ -9,7 +9,6 @@ import { Link, useLocation } from "react-router-dom";
 
 export function NavigationComponent() {
   const location = useLocation();
-  console.log(location);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function toggleMenu() {

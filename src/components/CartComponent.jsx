@@ -1,6 +1,10 @@
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { CartListPiece } from "./CartListPieceComponent";
 import { PaymentComponent } from "./PaymentComponent";
 export function CartComponent() {
+  const cartState = useSelector((state) => state.cart);
+
   return (
     <div className="cart_component">
       <h1>Product Cart</h1>
@@ -12,18 +16,36 @@ export function CartComponent() {
             <p className="title_by_price">Цена</p>
             <p className="title_by_total">Стоимость</p>
           </div>
-          <div className="cart_product_list">
-            <CartListPiece></CartListPiece>
-          </div>
+          {cartState.cart == [] ? (
+            <h1>Корзина пуста</h1>
+          ) : (
+            <div className="cart_product_list">
+              {cartState.cart.map((productInfo) => {
+                return (
+                  <CartListPiece
+                    key={productInfo.id}
+                    productInfo={productInfo}
+                  ></CartListPiece>
+                );
+              })}
+            </div>
+          )}
+
           <div className="cart_info_bot">
-            <button>Продолжить покупки</button>
+            <button
+              onClick={() => {
+                console.log(cartState.cart);
+              }}
+            >
+              <Link to="/">Продолжить покупки</Link>
+            </button>
             <div className="cart_priceInfo_bot">
               <h2>Итого</h2>
-              <p>174.41 р.</p>
+              <p>{cartState.total.toFixed(2)} $</p>
             </div>
           </div>
         </div>
-        <PaymentComponent></PaymentComponent>
+        <PaymentComponent total={cartState.total.toFixed(2)}></PaymentComponent>
       </div>
     </div>
   );

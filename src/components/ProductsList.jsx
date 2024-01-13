@@ -5,7 +5,7 @@ export function ProductsList({content}) {
   return (
     <div className="products_list">
       {content.map((product) => {
-        return <ProductCard product={product}></ProductCard>;
+        return <ProductCard key={product.id} product={product}></ProductCard>;
       })}
     </div>
   );

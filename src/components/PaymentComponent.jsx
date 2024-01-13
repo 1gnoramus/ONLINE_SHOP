@@ -1,4 +1,4 @@
-export function PaymentComponent() {
+export function PaymentComponent({total}) {
   return (
     <div className="payment_cont">
       <h2>Информация об оплате</h2>
@@ -19,7 +19,7 @@ export function PaymentComponent() {
           <input type="text" placeholder="Код" />
         </div>
       </div>
-      <button className="pay_btn"> Подтведить и оплатить 174.41 р.</button>
+      <button className="pay_btn"> Подтведить и оплатить {total} р.</button>
     </div>
   );
 }

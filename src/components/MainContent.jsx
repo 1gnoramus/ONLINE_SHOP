@@ -9,6 +9,8 @@ import { LoadingComponent } from "./LoadingComponent";
 import { ErrorComponent } from "./ErrorComponent";
 
 export function MainContent(props) {
+
+ 
   const { data, isLoading, error } =
     props.theme == "popular"
       ? useGetProductsQuery() //25x{}

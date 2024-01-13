@@ -16,7 +16,7 @@ export function SideBar(props) {
         ) : (
           data.map((category) => {
             return (
-              <li>
+              <li key={category}>
                 <Link to={category}>
                   <p>{category.toUpperCase()}</p>
                 </Link>
