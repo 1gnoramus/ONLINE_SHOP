@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { CartListPiece } from "./CartListPieceComponent";
+import { EmptyComponent } from "./EmptyComponent";
 import { PaymentComponent } from "./PaymentComponent";
 export function CartComponent() {
   const cartState = useSelector((state) => state.cart);
@@ -20,14 +21,18 @@ export function CartComponent() {
             <h1>Корзина пуста</h1>
           ) : (
             <div className="cart_product_list">
-              {cartState.cart.map((productInfo) => {
-                return (
-                  <CartListPiece
-                    key={productInfo.id}
-                    productInfo={productInfo}
-                  ></CartListPiece>
-                );
-              })}
+              {cartState.cart.length == 0 ? (
+                <EmptyComponent text = 'Корзины'></EmptyComponent>
+              ) : (
+                cartState.cart.map((productInfo) => {
+                  return (
+                    <CartListPiece
+                      key={productInfo.id}
+                      productInfo={productInfo}
+                    ></CartListPiece>
+                  );
+                })
+              )}
             </div>
           )}
 
