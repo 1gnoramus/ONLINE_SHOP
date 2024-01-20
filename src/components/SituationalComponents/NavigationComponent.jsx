@@ -1,14 +1,14 @@
-import menu from "../assets/menu.png";
-import search from "../assets/search.png";
-import profile from "../assets/person_outline.png";
-import cart from "../assets/shopping_bag.png";
-import fav from "../assets/favorite_border.png";
+import menu from "../../assets/menu.png";
+import search from "../../assets/search.png";
+import profile from "../../assets/person_outline.png";
+import cart from "../../assets/shopping_bag.png";
+import fav from "../../assets/favorite_border.png";
 import { SideBar } from "./Sidebar";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useGetProductsQuery } from "../store/api";
+import { useGetProductsQuery } from "../../store/api";
 import { useDispatch } from "react-redux";
-import { addToSortedContent } from "../store/reducers";
+import { addToSortedContent } from "../../store/reducers";
 
 export function NavigationComponent() {
   const dispatch = useDispatch();

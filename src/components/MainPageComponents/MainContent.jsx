@@ -1,12 +1,13 @@
 import { ProductsList } from "./ProductsList";
-import { SortAsideComponent } from "./SortAsideComponent";
-import { SortTopComponent } from "./SortTopComponent";
+import { SortAsideComponent } from "../SituationalComponents/SortAsideComponent";
+import { SortTopComponent } from "../SituationalComponents/SortTopComponent";
 import {
   useGetProductsByCategoriesQuery,
   useGetProductsQuery,
-} from "../store/api";
-import { LoadingComponent } from "./LoadingComponent";
-import { ErrorComponent } from "./ErrorComponent";
+} from "../../store/api";
+
+import { LoadingComponent } from "../SituationalComponents/LoadingComponent";
+import { ErrorComponent } from "../SituationalComponents/ErrorComponent";
 
 export function MainContent(props) {
   const { data, isLoading, error } =
@@ -19,9 +20,10 @@ export function MainContent(props) {
     <ErrorComponent></ErrorComponent>
   ) : (
     <div className="main_cont">
-      <h1>{props.theme.toUpperCase()}</h1>
-      <SortTopComponent content={data}></SortTopComponent>
-      <div className="main_cont_bot">
+      <h1 className="component_title">{props.theme.toUpperCase()}</h1>
+
+      <div className="main_cont_grid">
+        <SortTopComponent content={data}></SortTopComponent>
         <SortAsideComponent content={data}></SortAsideComponent>
         <ProductsList content={data}></ProductsList>
       </div>

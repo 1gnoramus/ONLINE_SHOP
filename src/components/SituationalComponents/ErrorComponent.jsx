@@ -1,4 +1,4 @@
-import error from '../assets/error_outline.png'
+import error from '../../assets/error_outline.png'
 export function ErrorComponent() {
   return (
     <div className="error_cont">

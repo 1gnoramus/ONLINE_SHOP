@@ -1,16 +1,16 @@
-import cart from "../assets/shopping_bag.png";
-import cart2 from "../assets/shopping_bag_filled.png";
-import fav from "../assets/favorite_border.png";
-import fav2 from "../assets/favorite.png";
-import star from "../assets/star.png";
-import { RatingComponent } from "./RatingComponent";
+import cart from "../../assets/shopping_bag.png";
+import cart2 from "../../assets/shopping_bag_filled.png";
+import fav from "../../assets/favorite_border.png";
+import fav2 from "../../assets/favorite.png";
+import star from "../../assets/star.png";
+import { RatingComponent } from "../SituationalComponents/RatingComponent";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addToCart,
   addToFav,
   removeFromCart,
   removeFromFav,
-} from "../store/reducers";
+} from "../../store/reducers";
 import { useState } from "react";
 import { AboutComponent } from "./AboutComponent";
 
@@ -57,7 +57,7 @@ export function ProductCard({ product }) {
             setIsAboutActive(!isAboutActive);
           }}
         >
-          {product.rating.count} 
+          Подробнее
         </button>
         <RatingComponent rating={product.rating.rate}></RatingComponent>
       </div>

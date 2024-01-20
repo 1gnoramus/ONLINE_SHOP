@@ -1,10 +1,10 @@
-import { RatingComponent } from "./RatingComponent";
-import cart from "../assets/shopping_bag.png";
-import cart2 from "../assets/shopping_bag_filled.png";
-import fav from "../assets/favorite.png";
-import fav2 from "../assets/favorite.png";
+import { RatingComponent } from "../SituationalComponents/RatingComponent";
+import cart from "../../assets/shopping_bag.png";
+import cart2 from "../../assets/shopping_bag_filled.png";
+import fav from "../../assets/favorite.png";
+import fav2 from "../../assets/favorite.png";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, removeFromCart, removeFromFav } from "../store/reducers";
+import { addToCart, removeFromCart, removeFromFav } from "../../store/reducers";
 
 export function FavoriteCard({ productInfo }) {
   const dispatch = useDispatch();

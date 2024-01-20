@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { ErrorComponent } from "./components/ErrorComponent";
-import { FavoriteComponent } from "./components/FavoriteComponent";
-import { CartComponent } from "./components/CartComponent";
-import { LoadingComponent } from "./components/LoadingComponent";
-import { MainContent } from "./components/MainContent";
-import { NavigationComponent } from "./components/NavigationComponent";
+import { ErrorComponent } from "./components/SituationalComponents/ErrorComponent";
+import { FavoriteComponent } from "./components/FavoritePageComponents/FavoriteComponent";
+import { CartComponent } from "./components/CartPageComponents/CartComponent";
+import { LoadingComponent } from "./components/SituationalComponents/LoadingComponent";
+import { MainContent } from "./components/MainPageComponents/MainContent";
+import { NavigationComponent } from "./components/SituationalComponents/NavigationComponent";
 import { useGetCategoriesQuery, useGetProductsQuery } from "./store/api";
 
 function App() {

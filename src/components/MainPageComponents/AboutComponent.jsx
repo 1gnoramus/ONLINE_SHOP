@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import clear from "../assets/clear.png";
-import { addToCart, removeFromCart } from "../store/reducers";
+import clear from "../../assets/clear.png";
+import { addToCart, removeFromCart } from "../../store/reducers";
 
 export function AboutComponent({ setIsAboutActive, product }) {
   const dispatch = useDispatch();

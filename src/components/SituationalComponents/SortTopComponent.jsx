@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addToSortedContent } from "../store/reducers";
+import { addToSortedContent } from "../../store/reducers";
 
 export function SortTopComponent({ content }) {
   const dispatch = useDispatch();

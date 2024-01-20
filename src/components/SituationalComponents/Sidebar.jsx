@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import menu from "../assets/menu.png";
-import { useGetCategoriesQuery } from "../store/api";
+import menu from "../../assets/menu.png";
+import { useGetCategoriesQuery } from "../../store/api";
 
 export function SideBar(props) {
   const { data, isLoading, error } = useGetCategoriesQuery();

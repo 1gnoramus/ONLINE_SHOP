@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addToSortedContent } from "../store/reducers";
+import { addToSortedContent } from "../../store/reducers";
 
 export function SortAsideComponent({ content }) {
   const dispatch = useDispatch();
@@ -48,28 +48,32 @@ export function SortAsideComponent({ content }) {
         />
         <p>{countRange}</p>
       </div>
-      <input
-        type="number"
-        value={minPrice}
-        onChange={(e) => {
-          setMinPrice(e.target.value);
-        }}
-      />
-      <input
-        type="number"
-        value={maxPrice}
-        onChange={(e) => {
-          setMaxPrice(e.target.value);
-        }}
-      />
-      <button
-        onClick={() => {
-          dispatch(addToSortedContent(sortedByDiap));
-          
-        }}
-      >
-        Sort
-      </button>
+
+      <div className="max_min_range_cont">
+        <label htmlFor="">Min Price</label>
+        <input
+          type="number"
+          value={minPrice}
+          onChange={(e) => {
+            setMinPrice(e.target.value);
+          }}
+        />
+        <label htmlFor="">Max Price</label>
+        <input
+          type="number"
+          value={maxPrice}
+          onChange={(e) => {
+            setMaxPrice(e.target.value);
+          }}
+        />
+        <button
+          onClick={() => {
+            dispatch(addToSortedContent(sortedByDiap));
+          }}
+        >
+          Sort
+        </button>
+      </div>
     </div>
   );
 }

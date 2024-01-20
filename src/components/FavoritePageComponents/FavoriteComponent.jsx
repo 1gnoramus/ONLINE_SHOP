@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { EmptyComponent } from "./EmptyComponent";
+import { EmptyComponent } from "../SituationalComponents/EmptyComponent";
 import { FavoriteCard } from "./FavoriteCard";
 
 export function FavoriteComponent() {
@@ -7,7 +7,7 @@ export function FavoriteComponent() {
   console.log(favState.fav);
   return (
     <div className="favorite_component">
-      <h1>FAVORITE</h1>
+      <h1 className="component_title">FAVORITE</h1>
       <div className="favorite_list">
         {favState.fav.length == 0 ? (
           <EmptyComponent text={'Избранных'}></EmptyComponent>
