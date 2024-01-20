@@ -17,6 +17,8 @@ import { AboutComponent } from "./AboutComponent";
 export function ProductCard({ product }) {
   const cartState = useSelector((state) => state.cart);
   const favState = useSelector((state) => state.fav);
+  let isInCart = cartState.cart.some((item) => item.id == product.id);
+  let isInFav = favState.fav.some((item) => item.id == product.id);
   const dispatch = useDispatch();
 
   let [isAboutActive, setIsAboutActive] = useState(false);
