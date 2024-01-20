@@ -106,6 +106,7 @@ nav {
 }
 .sort_cont_top_options p {
   font-weight: 600;
+  cursor: pointer;
 }
 
 /* SORT ASIDE COMPONENT */

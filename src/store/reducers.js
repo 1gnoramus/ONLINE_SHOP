@@ -5,11 +5,10 @@ export const cartSlice = createSlice({
   initialState: {
     cart: [],
     total: 0,
-    
   },
   reducers: {
     addToCart: (state, action) => {
-      console.log(action)
+      console.log(action);
       state.cart.push(action.payload);
     },
     removeFromCart: (state, action) => {
@@ -24,7 +23,6 @@ export const cartSlice = createSlice({
       state.total -= action.payload;
     },
   },
-
 });
 export const { addToCart, removeFromCart, addToTotal, removeFromTotal } =
   cartSlice.actions;
@@ -44,4 +42,18 @@ export const favoritesSlice = createSlice({
   },
 });
 
-export const {addToFav, removeFromFav} = favoritesSlice.actions
+export const { addToFav, removeFromFav } = favoritesSlice.actions;
+
+export const sortedProductSlice = createSlice({
+  name: "sort",
+  initialState: {
+    sortedContent: [],
+  },
+  reducers: {
+    addToSortedContent: (state, action) => {
+      state.sortedContent = action.payload;
+    },
+  },
+});
+
+export const { addToSortedContent } = sortedProductSlice.actions;

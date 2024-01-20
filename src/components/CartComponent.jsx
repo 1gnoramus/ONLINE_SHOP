@@ -16,7 +16,7 @@ export function CartComponent() {
             <p className="title_by_quantity">Количество</p>
             <p className="title_by_price">Цена</p>
             <p className="title_by_total">Стоимость</p>
-          </div>
+          </div> 
           {cartState.cart == [] ? (
             <h1>Корзина пуста</h1>
           ) : (

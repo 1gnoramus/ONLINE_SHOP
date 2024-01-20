@@ -9,8 +9,6 @@ import { LoadingComponent } from "./LoadingComponent";
 import { ErrorComponent } from "./ErrorComponent";
 
 export function MainContent(props) {
-
- 
   const { data, isLoading, error } =
     props.theme == "popular"
       ? useGetProductsQuery() //25x{}
@@ -22,9 +20,9 @@ export function MainContent(props) {
   ) : (
     <div className="main_cont">
       <h1>{props.theme.toUpperCase()}</h1>
-      <SortTopComponent></SortTopComponent>
+      <SortTopComponent content={data}></SortTopComponent>
       <div className="main_cont_bot">
-        <SortAsideComponent></SortAsideComponent>
+        <SortAsideComponent content={data}></SortAsideComponent>
         <ProductsList content={data}></ProductsList>
       </div>
     </div>
